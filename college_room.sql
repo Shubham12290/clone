@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.45, for Win64 (x86_64)
 --
--- Host: localhost    Database: collage
+-- Host: localhost    Database: college
 -- ------------------------------------------------------
 -- Server version	8.0.45
 
@@ -16,30 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `eop`
+-- Table structure for table `room`
 --
 
-DROP TABLE IF EXISTS `eop`;
+DROP TABLE IF EXISTS `room`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `eop` (
+CREATE TABLE `room` (
   `id` int NOT NULL,
-  `name` varchar(40) DEFAULT NULL,
-  `month_salary` int DEFAULT NULL,
-  `department` varchar(50) DEFAULT NULL,
-  `email` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `name` varchar(10) DEFAULT NULL,
+  `class` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `room_ibfk_1` FOREIGN KEY (`id`) REFERENCES `student` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `v` FOREIGN KEY (`id`) REFERENCES `student` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `eop`
+-- Dumping data for table `room`
 --
 
-LOCK TABLES `eop` WRITE;
-/*!40000 ALTER TABLE `eop` DISABLE KEYS */;
-INSERT INTO `eop` VALUES (2,'g',20000,'mr',NULL);
-/*!40000 ALTER TABLE `eop` ENABLE KEYS */;
+LOCK TABLES `room` WRITE;
+/*!40000 ALTER TABLE `room` DISABLE KEYS */;
+INSERT INTO `room` VALUES (2,'jk',NULL);
+/*!40000 ALTER TABLE `room` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-20 21:20:56
+-- Dump completed on 2026-03-20 21:20:34

@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.45, for Win64 (x86_64)
 --
--- Host: localhost    Database: collage
+-- Host: localhost    Database: companys
 -- ------------------------------------------------------
 -- Server version	8.0.45
 
@@ -16,30 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `eop`
+-- Table structure for table `orders`
 --
 
-DROP TABLE IF EXISTS `eop`;
+DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `eop` (
-  `id` int NOT NULL,
-  `name` varchar(40) DEFAULT NULL,
-  `month_salary` int DEFAULT NULL,
-  `department` varchar(50) DEFAULT NULL,
-  `email` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `orders` (
+  `order_id` int NOT NULL,
+  `customer_name` varchar(50) DEFAULT NULL,
+  `product_name` varchar(50) DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  `price` int DEFAULT NULL,
+  `order_date` date DEFAULT NULL,
+  `city` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `eop`
+-- Dumping data for table `orders`
 --
 
-LOCK TABLES `eop` WRITE;
-/*!40000 ALTER TABLE `eop` DISABLE KEYS */;
-INSERT INTO `eop` VALUES (2,'g',20000,'mr',NULL);
-/*!40000 ALTER TABLE `eop` ENABLE KEYS */;
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,'Rahul Sharma','Laptop',1,55000,'2024-01-10','Delhi'),(2,'Anita Verma','Mobile',2,20000,'2024-01-15','Mumbai'),(3,'Amit Singh','Headphones',3,3000,'2024-02-05','Pune'),(4,'Neha Gupta','Tablet',1,25000,'2024-02-18','Bangalore'),(5,'Rohit Kumar','Keyboard',2,1500,'2024-03-01','Chennai'),(6,'Pooja Mehta','Mouse',5,800,'2024-03-10','Ahmedabad'),(7,'Suresh Reddy','Monitor',1,18000,'2024-03-20','Hyderabad');
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-20 21:20:56
+-- Dump completed on 2026-03-20 21:21:03

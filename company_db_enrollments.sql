@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.45, for Win64 (x86_64)
 --
--- Host: localhost    Database: collage
+-- Host: localhost    Database: company_db
 -- ------------------------------------------------------
 -- Server version	8.0.45
 
@@ -16,30 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `eop`
+-- Table structure for table `enrollments`
 --
 
-DROP TABLE IF EXISTS `eop`;
+DROP TABLE IF EXISTS `enrollments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `eop` (
-  `id` int NOT NULL,
-  `name` varchar(40) DEFAULT NULL,
-  `month_salary` int DEFAULT NULL,
-  `department` varchar(50) DEFAULT NULL,
-  `email` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `enrollments` (
+  `student_id` int DEFAULT NULL,
+  `course_id` int DEFAULT NULL,
+  `since` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `eop`
+-- Dumping data for table `enrollments`
 --
 
-LOCK TABLES `eop` WRITE;
-/*!40000 ALTER TABLE `eop` DISABLE KEYS */;
-INSERT INTO `eop` VALUES (2,'g',20000,'mr',NULL);
-/*!40000 ALTER TABLE `eop` ENABLE KEYS */;
+LOCK TABLES `enrollments` WRITE;
+/*!40000 ALTER TABLE `enrollments` DISABLE KEYS */;
+INSERT INTO `enrollments` VALUES (1,101,'2023-01-10'),(2,101,'2023-02-15'),(3,102,'2023-03-05'),(1,103,'2023-04-20'),(4,102,'2023-05-18'),(2,103,'2023-06-12'),(5,101,'2023-07-25'),(3,104,'2023-08-30');
+/*!40000 ALTER TABLE `enrollments` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-20 21:20:56
+-- Dump completed on 2026-03-20 21:20:39

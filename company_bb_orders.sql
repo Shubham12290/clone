@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.45, for Win64 (x86_64)
 --
--- Host: localhost    Database: collage
+-- Host: localhost    Database: company_bb
 -- ------------------------------------------------------
 -- Server version	8.0.45
 
@@ -16,30 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `eop`
+-- Table structure for table `orders`
 --
 
-DROP TABLE IF EXISTS `eop`;
+DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `eop` (
-  `id` int NOT NULL,
-  `name` varchar(40) DEFAULT NULL,
-  `month_salary` int DEFAULT NULL,
-  `department` varchar(50) DEFAULT NULL,
-  `email` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `orders` (
+  `order_id` int DEFAULT NULL,
+  `customer_id` int DEFAULT NULL,
+  `product_id` int DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  `order_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `eop`
+-- Dumping data for table `orders`
 --
 
-LOCK TABLES `eop` WRITE;
-/*!40000 ALTER TABLE `eop` DISABLE KEYS */;
-INSERT INTO `eop` VALUES (2,'g',20000,'mr',NULL);
-/*!40000 ALTER TABLE `eop` ENABLE KEYS */;
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1001,1,101,1,'2025-01-10'),(1002,2,102,2,'2025-01-12'),(1003,3,103,1,'2025-01-15'),(1004,4,101,1,'2025-01-20'),(1005,5,104,3,'2025-01-25'),(1006,6,102,1,'2025-02-01'),(1007,1,105,2,'2025-02-05'),(1008,3,101,1,'2025-02-10'),(1009,2,103,2,'2025-02-12');
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-20 21:20:56
+-- Dump completed on 2026-03-20 21:20:02

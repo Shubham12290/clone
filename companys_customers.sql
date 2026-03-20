@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.45, for Win64 (x86_64)
 --
--- Host: localhost    Database: collage
+-- Host: localhost    Database: companys
 -- ------------------------------------------------------
 -- Server version	8.0.45
 
@@ -16,30 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `eop`
+-- Table structure for table `customers`
 --
 
-DROP TABLE IF EXISTS `eop`;
+DROP TABLE IF EXISTS `customers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `eop` (
-  `id` int NOT NULL,
-  `name` varchar(40) DEFAULT NULL,
-  `month_salary` int DEFAULT NULL,
-  `department` varchar(50) DEFAULT NULL,
-  `email` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `customers` (
+  `customer_id` int NOT NULL,
+  `customer_name` varchar(50) DEFAULT NULL,
+  `city` varchar(30) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `eop`
+-- Dumping data for table `customers`
 --
 
-LOCK TABLES `eop` WRITE;
-/*!40000 ALTER TABLE `eop` DISABLE KEYS */;
-INSERT INTO `eop` VALUES (2,'g',20000,'mr',NULL);
-/*!40000 ALTER TABLE `eop` ENABLE KEYS */;
+LOCK TABLES `customers` WRITE;
+/*!40000 ALTER TABLE `customers` DISABLE KEYS */;
+INSERT INTO `customers` VALUES (1,'Rahul Sharma','Delhi','9876543210','rahul@gmail.com'),(2,'Anita Verma','Mumbai','9876543221','anita@gmail.com'),(3,'Amit Singh','Pune','9876543232','amit@gmail.com'),(4,'Neha Gupta','Bangalore','9876543243','neha@gmail.com'),(5,'Rohit Kumar','Chennai','9876543254','rohit@gmail.com'),(6,'Pooja Mehta','Ahmedabad','9876543265','pooja@gmail.com'),(7,'Suresh Reddy','Hyderabad','9876543276','suresh@gmail.com'),(8,'Kiran Patelko','Surat','9876543287','kiran@gmail.com'),(55,NULL,'Jaipur',NULL,NULL),(100,NULL,'Jaipur',NULL,NULL);
+/*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-20 21:20:56
+-- Dump completed on 2026-03-20 21:21:02

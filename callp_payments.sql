@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.45, for Win64 (x86_64)
 --
--- Host: localhost    Database: collage
+-- Host: localhost    Database: callp
 -- ------------------------------------------------------
 -- Server version	8.0.45
 
@@ -16,30 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `eop`
+-- Table structure for table `payments`
 --
 
-DROP TABLE IF EXISTS `eop`;
+DROP TABLE IF EXISTS `payments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `eop` (
-  `id` int NOT NULL,
-  `name` varchar(40) DEFAULT NULL,
-  `month_salary` int DEFAULT NULL,
-  `department` varchar(50) DEFAULT NULL,
-  `email` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `payments` (
+  `payment_id` int NOT NULL,
+  `customer_name` varchar(50) DEFAULT NULL,
+  `amount` decimal(10,2) DEFAULT NULL,
+  `payment_date` date DEFAULT NULL,
+  `payment_method` varchar(20) DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`payment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `eop`
+-- Dumping data for table `payments`
 --
 
-LOCK TABLES `eop` WRITE;
-/*!40000 ALTER TABLE `eop` DISABLE KEYS */;
-INSERT INTO `eop` VALUES (2,'g',20000,'mr',NULL);
-/*!40000 ALTER TABLE `eop` ENABLE KEYS */;
+LOCK TABLES `payments` WRITE;
+/*!40000 ALTER TABLE `payments` DISABLE KEYS */;
+INSERT INTO `payments` VALUES (1,'Alice',1500.00,'2024-01-05','Card','Success'),(2,'Bob',2300.50,'2024-01-10','UPI','Success'),(3,'Charlie',800.00,'2024-01-15','Cash','Success'),(4,'Diana',4500.00,'2024-02-01','NetBanking','Failed'),(5,'Eve',1200.00,'2024-02-14','Card','Pending'),(6,'Frank',3100.75,'2024-03-03','UPI','Success'),(7,'Grace',950.00,'2024-03-18','Cash','Success'),(8,'Hank',5000.00,'2024-04-01','Card','Failed'),(9,'Ivy',2750.00,'2024-04-20','NetBanking','Success'),(10,'Jack',1800.00,'2024-05-05','UPI','Pending');
+/*!40000 ALTER TABLE `payments` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-20 21:20:56
+-- Dump completed on 2026-03-20 21:20:45
